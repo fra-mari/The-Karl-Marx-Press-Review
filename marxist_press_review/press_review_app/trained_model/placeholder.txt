@@ -1,0 +1,7 @@
+This is where the 2 files:
+
+- config.json
+- pytorch_model.bin 
+
+generated via the Google Colaboratory Notebook "Text-Generating_GPT-2_Finetuner_on_Colab_GPU.ipynb" that may
+be found in the folder data_and_model/ should be pasted. 
