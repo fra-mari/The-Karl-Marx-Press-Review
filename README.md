@@ -1,14 +1,12 @@
 ![visualization](./logo.png)
-
 ## A website to visualise a NLP project on text generation with GPT-2
 
 
+![gif](./press-review.gif)
 
 
-
-
-### To Use This Code Locally
 ---
+### To Use This Code Locally
 #### STEP 1: Generate the dataset and the model:
 
 - Clone this repository;
@@ -28,15 +26,21 @@ In order for this webapp to work, you will need to set <u> two environment varia
 
 - Go to the folder `marxist_press_review`;
   - run `docker-compose build` and wait for Docker to set up everything for you.
-  - run `docker-compose up` and wait for the log to confirm that the webapp has correctly started (something like `press_review_app_1   | 2021-08-16 15:38:21,336: INFO:  * Running on http://172.18.0.4:5000/`);
+  - run `docker-compose up` and wait for the log to confirm that the webapp has correctly started (something like `press_review_app_1   | 2021-08-16 15:38:21,336: INFO:  * Running on http://<ANY-ADDRESS-ENDING-BY-:5000/>`. );
   - wait for another while, as the software downloads the most recent articles from _The Guardian_'s API to PostgreSQL (the log will confirm that your API key works correctly by printing lines such as: `2021-08-16 15:40:12,819: INFO: Successfully connected to https://content.guardianapis.com/search?section=world: scraping...`);
 - open the address `http://localhost:5000` in your browser and the website should appear. Have fun talking with Karl Marx!
 
-
+---
 
 ### Further Reading
 
 * Alammar, J. (2019), *The Illustrated GPT-2 (Visualizing Transformer Language Models)*, URL: https://jalammar.github.io/illustrated-gpt2/.
 * Radford, A. *et al.* (2019), “Language Models are Unsupervised Multitask Learners”, *OpenAi Blog*, URL: https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf.
 * Vaswani, A. *et al.* (2017), “Attention is All You Need”, 31st Conference on Neural Information Processing Systems (*NIPS* 2017), Long Beach (CA), URL: https://arxiv.org/abs/1706.03762.
+
+---
+### To Do:
+- Add more documentation;
+- host on GCP;
+- tests
 
