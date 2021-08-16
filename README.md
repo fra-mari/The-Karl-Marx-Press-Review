@@ -1,9 +1,24 @@
-![visualization](./logo.png)
-## A website to visualise a NLP project on text generation with GPT-2
+# The Karl Marx’s Press Review
 
+_A website to visualise a NLP project on text generation with GPT-2_
 
-![gif](./press-review.gif)
+### Concept
+This website has been developed with Python and Flask to provide a visualisation of **a project on text generation with [GPT-2](https://openai.com/blog/better-language-models/)**. Trained on 8 million webpages, GPT-2 was released in 2019 for generating high-quality short texts based on a few words provided as an initial input. 
 
+For this project, I decided to **fine-tune the GPT-2**, that is to make it especially sensitive to a certain vocabulary or style, so as to reproduce those features while generating text. To achieve this goal and to better be able to assess its results, I first looked for **a corpus of texts featuring a very colourful, if homogenous, rhetoric** to retrain the GPT-2 on. My choice eventually fell on the works of Karl Marx and Friedrich Engels, which I scraped from the website of the [Marx Engels Archive](https://marxists.architexturez.net/archive/marx/index.htm). Moreover, to observe the outcome of “Marxist” textual generation on a variety of topics, I thought it could be interesting to **provide inputs for the GPT-2 from a newspaper**. Hence the idea of this peculiar press review, which is updated with the latest news of [The Guardian](https://www.theguardian.com).
+| ![gif](./press-review.gif) |
+|:--:|
+---
+### Architecture
+The model is fine-tuned by means of [aitextgen](https://docs.aitextgen.io/), a Python library developed by [Max Woolf](https://github.com/minimaxir). Aitextgen leverages PyTorch to retrain the 124 M version of GPT-2 using the dataset provided by the user. 
+
+The webapp cyclically collects articles from _The Guardian_’s API and uses the language model to generate “Marxist comments” based on them. I also implemented some basic **sentiment analysis** on the generated comments using [VADER](https://github.com/cjhutto/vaderSentiment) (_Valence Aware Dictionary and sEntiment Reasoner_). All these data are eventually stored in the SQL database.
+
+The website also features a function for directly interacting with the model. The Marxist GPT-2 is not _always_ very intelligent, however it is pretty opinionated one, and it is always fun to talk to it! 😉   
+
+| ![gif](./generator.gif) |
+|:--:|
+|<span style="color:grey"><i>It is a bit long but...the wait is worth the pain!</i></span>|
 
 ---
 ### To Use This Code Locally
