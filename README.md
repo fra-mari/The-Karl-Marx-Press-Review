@@ -24,12 +24,12 @@ The website also features a function for directly interacting with the model. Th
 ### To Use This Code Locally
 #### STEP 1: Generate the dataset and the model:
 
-- Clone this repository;
+- Clone this repository
 - Go to the folder `data_and_model`:
-  - install the requirements with `pip install requirements.txt`;
-  - run: `python scraper_preprocesser.py` **to download the dataset on which to fine-tune the GPT-2 model** (`marx.txt`). After running the process, you should see it in a new subfolder called `training_dataset/preprocessed`;
-  - **To download and fine-tune the GPT-2 model**, load the Notebook `Text-Generating_GPT-2_Finetuner_on_Colab_GPU.ipynb` into your Google Drive, <u>open it with Google Colaboratory</u> and follow the instructions to create the two files `pytorch_model.bin` and `config.json`;
-  - Paste these files into the two subfolders `trained_model` to be found in: `marxist_press_review/article_collector/` and `marxist_press_review/press_review_app/`.
+  - install the requirements with `pip install requirements.txt`
+  - run: `python scraper_preprocesser.py` **to download the dataset on which to fine-tune the GPT-2 model** (`marx.txt`). After running the process, you should see it in a new subfolder called `training_dataset/preprocessed`
+  - **To download and fine-tune the GPT-2 model**, load the Notebook `Text-Generating_GPT-2_Finetuner_on_Colab_GPU.ipynb` into your Google Drive, <u>open it with Google Colaboratory</u> and follow the instructions to create the two files `pytorch_model.bin` and `config.json`
+  - Paste these files into the two subfolders `trained_model` to be found in: `marxist_press_review/article_collector/` and `marxist_press_review/press_review_app/`
 
 #### STEP 2: Setting the required environment variables
 
@@ -41,9 +41,11 @@ In order for this webapp to work, you will need to set <u> two environment varia
 
 - Go to the folder `marxist_press_review`;
   - run `docker-compose build` and wait for Docker to set up everything for you.
-  - run `docker-compose up` and wait for the log to confirm that the webapp has correctly started (something like `press_review_app_1   | 2021-08-16 15:38:21,336: INFO:  * Running on http://<ANY-ADDRESS-ENDING-BY-:5000/>`. );
-  - wait for another while, as the software downloads the most recent articles from _The Guardian_'s API to PostgreSQL (the log will confirm that your API key works correctly by printing lines such as: `2021-08-16 15:40:12,819: INFO: Successfully connected to https://content.guardianapis.com/search?section=world: scraping...`);
-- open the address `http://localhost:5000` in your browser and the website should appear. Have fun talking with Karl Marx!
+  - run `docker-compose up` and wait for the log to confirm that the webapp has correctly started (something like `press_review_app_1   | 2021-08-16 15:38:21,336: INFO:  * Running on http://<ANY-ADDRESS-ENDING-BY-:5000/>`. )
+  - wait for another while, as the software downloads the most recent articles from _The Guardian_'s API to PostgreSQL (the log will confirm that your API key works correctly by printing lines such as: `2021-08-16 15:40:12,819: INFO: Successfully connected to https://content.guardianapis.com/search?section=world: scraping...`)
+- open the address `http://localhost:5000` in your browser and the website should appear. 
+
+Have fun talking with Karl Marx!
 
 ---
 
@@ -55,7 +57,7 @@ In order for this webapp to work, you will need to set <u> two environment varia
 
 ---
 ### To Do:
-- Add more documentation;
-- host on GCP;
+- Add more documentation
+- host on GCP
 - tests
 
