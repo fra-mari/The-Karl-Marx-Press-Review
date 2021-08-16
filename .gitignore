@@ -138,3 +138,6 @@ marxist_press_review/press_review_app/trained_model/pytorch_model.bin
 
 # Dataset
 data_and_model/training_dataset/
+
+# DS store
+.DS_Store
