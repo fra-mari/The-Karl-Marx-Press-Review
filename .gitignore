@@ -127,3 +127,14 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# Language Models
+marxist_press_review/article_collector/trained_model/config.json
+marxist_press_review/article_collector/trained_model/pytorch_model.bin
+marxist_press_review/press_review_app/trained_model/config.json
+marxist_press_review/press_review_app/trained_model/pytorch_model.bin
+
+
+# Dataset
+data_and_model/training_dataset/
