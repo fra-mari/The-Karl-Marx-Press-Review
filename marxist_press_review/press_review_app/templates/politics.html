@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="section">
+    <h2 class="text-white">Politics</h2>
+</div>
+
+
+<div class="d-grid col-8 mx-auto">
+
+
+
+    {% macro article(ar) -%}
+
+
+
+    <h3><br><b>{{ ar['title'] }}</b></h3>
+    <p class="text-danger"><b>{{ ar['author'] }}</b></p>
+    <p class="text-muted"><i>{{ ar['date'] }}</i><br></p>
+
+
+    <div class="card mb-3">
+        <img src={{ ar['img_url'] }} class="card-img-top" alt={{ ar['img_cred'] }}>
+        <div class="card-body">
+            <p class="card-text">{{ ar['img_descr'] }}</p>
+            <p class="card-text"><small class="text-muted">{{ ar['img_cred'] }}</small></p>
+        </div>
+    </div>
+
+
+    <p>{{ ar['body']|truncate(2000,False) }}</p>
+    <p class="text-muted"><i>Click <a href={{ ar['short_url'] }} class="link-danger"><b>here</b></a> for the original
+            article on the webpage of The Guardian.</i></p>
+</div>
+
+<div class="d-grid col-8 mx-auto">
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-warning p-4">
+            <div class="d-grid col-9 mx-auto">
+                <h5 class="text-black h4">Karl Marx’ comment on this article</h5>
+                <span class="text-black">{{ ar['marx_comment'] }}<br><br><b>{{ ar['marx_judgement'] }}</b></span>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark" style="background-color: #1d375f;">
+        <div class="container-fluid">
+            <div class="d-grid col-5 mx-auto">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    Click to display Karl Marx’ comments
+                </button>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="d-grid col-8 mx-auto">
+    {% endmacro -%}
+
+    {{ article(ar1) }}
+    {{ article(ar2) }}
+    {{ article(ar3) }}
+    {{ article(ar4) }}
+    {{ article(ar5) }}
+
+
+
+    <p>{% endblock %}</p>

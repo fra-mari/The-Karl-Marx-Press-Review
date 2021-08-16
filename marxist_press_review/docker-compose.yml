@@ -1,0 +1,33 @@
+version: '3'
+services:
+
+  postgresdb:
+    image: postgres
+    ports:
+      - "5556:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=pg_guardian
+
+  article_collector:
+    build: article_collector/
+    volumes:
+    - ./article_collector/:/app
+    depends_on:
+    - postgresdb
+    environment:
+    - GUARDIAN_API_KEY=${GUARDIAN_API_KEY}
+    - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+  press_review_app:
+    build: press_review_app/
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./press_review_app/:/press_review_app/ 
+    depends_on: 
+      - postgresdb
+    environment: 
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+  

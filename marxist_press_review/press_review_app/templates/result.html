@@ -1,0 +1,42 @@
+{% if result %}
+
+{% if result == "GPT-2-Marx could not generate any text from this prompt. Try something else." %}
+
+<div class="d-grid col-6 mx-auto">
+    <div class="card border-dark mb-3" style="max-width: 100rem;">
+        <div class="card-header text-white bg-dark border-dark"><b>{{ result }}</b></div>
+        <div class="card-body text-muted">
+            <p class="card-text">Nothing to declare.</p>
+        </div>
+        <div class="card-footer text-danger bg-transparent border-black"><i>Try different combinations of words and syntactic constructions.<br>Sometimes it is fun to stop after a verb, and see how GPT-2-Marx <br>completes the sentence. It does not</i> always<i> make sense, but it's hilarious!</i></div>
+    </div>
+</div>
+
+{% elif result == 'Uh...we had said no more than FIVE words, right? 😅 ' %}
+
+<div class="d-grid col-6 mx-auto">
+    <div class="card border-dark mb-3" style="max-width: 100rem;">
+        <div class="card-header text-white bg-dark border-dark"><b>{{ result }}</b></div>
+        <div class="card-body text-muted">
+            <p class="card-text">The input sentence was too long.</p>
+        </div>
+        <div class="card-footer text-danger bg-transparent border-black"><i>We concede that six words is an arbitrary limitation. We may have chosen otherwise.<br>The thing is that we wanted to give Karl Marx all the space for chatting he deserves!</i></div>
+    </div>
+</div>
+
+
+{% else %}
+
+<div class="d-grid col-6 mx-auto">
+    <div class="card border-dark mb-3" style="max-width: 100rem;">
+        <div class="card-header text-white bg-dark border-dark"><b>GPT-2-Marx has generated the following:</b></div>
+        <div class="card-body text-dark">
+            <p class="card-text">{{ result }}</p>
+        </div>
+        <div class="card-footer text-danger bg-transparent border-black"><i>Sometimes it is nice to try a couple of times with the same text input.<br>Come on, give it another go!</i></div>
+    </div>
+</div>
+
+
+{% endif %}
+{% endif %}

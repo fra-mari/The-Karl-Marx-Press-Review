@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="about">
+    <h2 class="text-white">About This Website and the Technology It Uses</h2>
+</div>
+
+
+<div class="d-grid col-8 mx-auto">
+
+    <div class="about_box">
+        <p>This website has been developed with Python and <a href="https://flask.palletsprojects.com/en/2.0.x/"
+                class="link-danger">Flask</a> to provide
+            a visualisation of a project on text generation models. The recent, spectacular advancements of Natural
+            Language Processing (NLP) — that is the branch of Machine Learning aimed at making computers understand and
+            reproduce human language — have
+            encouraged me to try and train my own model for text generation. To be precise, I decided to
+            <i>fine-tune</i> a pre-trained model, that is
+            to only retrain the last layers of the Neural Network on the top of which that model was built. Broadly
+            speaking, this means to make a language model especially sensitive to a certain vocabulary or style,
+            so as to reproduce those features while generating text.<br><br>
+        </p>
+        <h4><b>The Model, the Corpus and the Idea of a Press Review</b></h4>
+        <p>As mentioned in the <a href='/' class="link-danger">Welcome Page</a>, the language model I have chosen is
+            called <a href="https://openai.com/blog/better-language-models/" class="link-danger">Generative Pre-trained
+                Transformer 2</a> (GPT-2), released by <a href="https://openai.com/about/"
+                class="link-danger">OpenAI</a> in 2019. GPT-2 was developed for predicting the next word in a text given
+            all the previous words in that same text. This objective was pursued by expanding the training dataset up to
+            8
+            million webpages featuring a great diversity of content. Used recursively on its own predictions,
+            therefore, GPT-2 has the ability to generate high-quality short texts based on a few words provided as an
+            initial input.<br><br>Moreover, by fine-tuning the model, it is possible to “control” the text generation
+            process so as to condition the result on specific topics or styles. To achieve this goal and to better be
+            able to assess its results, I first looked for a corpus of texts featuring a very colourful, if homogenous,
+            rhetoric to retrain the GPT-2 on. My choice eventually fell on the works of Karl Marx and Friedrich Engels,
+            which I scraped from the website of the <a href="https://marxists.architexturez.net/archive/marx/index.htm"
+                class="link-danger">Marx Engels Archive</a>.<br><br>There remained to decide how to deploy my model and
+            how to make it accessible. To observe the outcome of “Marxist” textual generation on a variety of topics, I
+            thought it could be interesting to provide inputs for the GPT-2 from a newspaper. Hence the idea of
+            this peculiar press review, which is updated with the latest news on a daily basis thanks to the wonderful
+            <a href="https://open-platform.theguardian.com" class="link-danger">API platform of <i>The Guardian</i></a>.
+
+            <br><br>
+        </p>
+        <h4><b>Architecture and Tools</b></h4>
+        <p>After appropriate cleaning and preparation of the training dataset, I fine-tuned the language model by means
+            of <a href="https://docs.aitextgen.io" class="link-danger"><b>aitextgen</b></a>, a Python library
+            developed by <a href="https://github.com/minimaxir" class="link-danger">Max Woolf</a>. <i>Aitextgen</i>
+            first downloads the 124 M version of GPT-2 from <a href="https://huggingface.co/transformers/"
+                class="link-danger">Hugging
+                Face’s repository of Transformers</a>, then leverages <a href="https://pytorch.org/"
+                class="link-danger">PyTorch</a> to retrain the model
+            using the dataset provided by the user. The whole process is admittedly too heavy to be handled by a normal
+            laptop’s CPU, yet any of the GPUs provided by <a href="https://colab.research.google.com/"
+                class="link-danger">Google Colab</a> can carry it out in less than an hour.<br><br>Once the model
+            prepared, I wrote some Python modules for cyclically collecting articles from <i>The Guardian</i>’s API and
+            for generating “Marxist comments” based on them. For the sheer pleasure of observing the result and having
+            some fun, I also implemented some basic sentiment analysis on the generated comments using <a
+                href="https://github.com/cjhutto/vaderSentiment" class="link-danger">VADER</a> (<i>Valence Aware
+                Dictionary and sEntiment Reasoner</i>). All these data are eventually stored in the SQL database on the
+            top of
+            which this website is built. <br><br>
+
+        </p>
+
+        <h5><b>References and Further Reading</b></h5>
+        <div class="ref">
+            <ul>
+                <li>Alammar, J. (2019), <i>The Illustrated GPT-2 (Visualizing Transformer Language Models)</i>, URL:
+                    <a href="https://jalammar.github.io/illustrated-gpt2/"
+                        class="link-danger">https://jalammar.github.io/illustrated-gpt2/</a>.
+                </li>
+                <li>Radford, A. <i>et al.</i> (2019), “Language Models are Unsupervised Multitask Learners”, <i>OpenAi
+                        Blog</i>, URL: <a
+                        href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf"
+                        class="link-danger">https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf</a>.
+                </li>
+                <li>Vaswani, A. <i>et al.</i> (2017), “Attention is All You Need”, 31<sup>st</sup> Conference on Neural
+                    Information
+                    Processing Systems (<i>NIPS</i> 2017), Long Beach (CA), URL: <a
+                        href="https://arxiv.org/abs/1706.03762"
+                        class="link-danger">https://arxiv.org/abs/1706.03762</a>.</li>
+                <br>
+                <p class="my-credits"><i>This project's code is available on my </i><a
+                        href="https://github.com/fra-mari" class="link-danger"><b>GitHub</b></a>.</p>
+            </ul>
+            <br>
+
+        </div>
+        <h5><b>Tech Stack</b></h5>
+
+        <div class="tech_imgs">
+
+            <a class="image" href="https://www.python.org"><img src="static/img/python-logo.png" alt="python"
+                    style="height:100px;"></a>
+            <a class="image" href="https://pytorch.org"><img src="static/img/pytorch-logo.png" alt="pytorch"
+                    style="height:100px;"></a>
+            <a class="image" href="https://pandas.pydata.org"><img src="static/img/pandas-logo.png" alt="pandas"
+                    style="height:100px;"></a>
+            <a class="image" href="https://flask.palletsprojects.com/en/2.0.x/"><img src="static/img/flask-logo.png"
+                    alt="flask" style="height:100px;"></a>
+            <a class="image" href="https://www.postgresql.org"><img src="static/img/postgres-logo.png" alt="postgres"
+                    style="height:100px;"></a>
+            <a class="image" href="https://colab.research.google.com"><img src="static/img/colab_logo.png" alt="colab"
+                    style="height:100px;"></a>
+            <a class="image" href="https://open-platform.theguardian.com"><img src="static/img/the-guardian-logo.png"
+                    alt="guardian" style="height:70px;"></a>
+            <br>
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+{% endblock %}

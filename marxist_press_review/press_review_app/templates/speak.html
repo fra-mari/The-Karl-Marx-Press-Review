@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="speak">
+  <h2 class="text-black"><b>The Marxist GPT-2 Goes Interactive!</b></h2>
+</div>
+
+<div class=text-gen>
+  <form action='/custom-generator' method='get'>
+    <h5>Please begin a sentence in English for GPT-2-Marx to complete it (max. 4-5 words):</h4><br>
+    <input class="form-control shadow-sm" type="text" name="prompt" placeholder="Ex.: Workers fight the bourgeoisie">
+    <br>
+    <div class="d-grid gap-2 col-3 mx-auto">
+      <input class="btn btn-danger" type="submit" value="Generate!">
+      
+    </div>
+  </form>
+</div><br>
+
+{% include 'result.html' %}
+
+{% endblock %}
