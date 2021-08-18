@@ -2,6 +2,10 @@
 
 _A website to visualise a NLP project on text generation with GPT-2_
 
+![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)![Website cv.lbesson.qc.to](https://img.shields.io/website-up-down-green-red/http/cv.lbesson.qc.to.svg)![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
+
+
+
 ### Concept
 This website has been developed with Python and Flask to provide a visualisation of **a project on text generation with [GPT-2](https://openai.com/blog/better-language-models/)**. Trained on 8 million webpages, GPT-2 was released in 2019 for generating high-quality short texts based on a few words provided as an initial input. 
 
@@ -28,7 +32,7 @@ The website also features a function for directly interacting with the model. Th
 - Go to the folder `data_and_model`:
   - install the requirements with `pip install requirements.txt`;
   - run: `python scraper_preprocesser.py` **to download the dataset on which to fine-tune the GPT-2 model** (`marx.txt`). After running the process, you should see it in a new subfolder called `training_dataset/preprocessed`;
-  - **To download and fine-tune the GPT-2 model**, load the Notebook `Text-Generating_GPT-2_Finetuner_on_Colab_GPU.ipynb` into your Google Drive, <u>open it with Google Colaboratory</u> and follow the instructions to create the two files `pytorch_model.bin` and `config.json`;
+  - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Naereen/badges)**To download and fine-tune the GPT-2 model**, load the Notebook `Text-Generating_GPT-2_Finetuner_on_Colab_GPU.ipynb` into your Google Drive, <u>open it with Google Colaboratory</u> and follow the instructions to create the two files `pytorch_model.bin` and `config.json`;
   - Paste these files into the two subfolders `trained_model` to be found in: `marxist_press_review/article_collector/` and `marxist_press_review/press_review_app/`.
 
 #### STEP 2: Setting the required environment variables
