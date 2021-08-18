@@ -2,7 +2,7 @@
 
 _A website to visualise a NLP project on text generation with GPT-2_
 
-![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)![Website cv.lbesson.qc.to](https://img.shields.io/website-up-down-green-red/http/cv.lbesson.qc.to.svg)![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
+![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg) ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg) ![Website cv.lbesson.qc.to](https://img.shields.io/website-up-down-green-red/http/cv.lbesson.qc.to.svg) ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
 
 
 
