@@ -61,8 +61,8 @@ Have fun talking with Karl Marx!
 
 ---
 ### To Do:
-- Increase the size of the training dataset
-- Add more documentation
-- Host on GCP
-- Tests
+- [ ] Increase the size of the training dataset
+- [ ] Add more documentation
+- [ ] Host on GCP
+- [ ] Tests
 
