@@ -2,7 +2,7 @@
 
 _A website to visualise a NLP project on text generation with GPT-2_
 
-![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg) ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg) ![Website cv.lbesson.qc.to](https://img.shields.io/website-up-down-green-red/http/cv.lbesson.qc.to.svg) ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
+![made-with-python](https://img.shields.io/badge/Made%20with-Python-E8B90F.svg) ![Maintenance](https://img.shields.io/badge/Maintained%5F-yes-green.svg) ![Website cv.lbesson.qc.to](https://img.shields.io/website-up-down-green-red/http/cv.lbesson.qc.to.svg) ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
 
 
 
@@ -37,13 +37,13 @@ The website also features a function for directly interacting with the model. Th
 
 #### STEP 2: Setting the required environment variables
 
-In order for this webapp to work, you will need to set <u> two environment variables</u>:
+In order for this webapp to work, you will need to set _two environment variables_:
 1. The password for the PostgreSQL database which will be created. Unless you do not want to change its name in the `docker-compose.yml` file, this variable must be called `POSTGRES_PASSWORD`;
 2. The API key for **The Guardian Open Platform**, which you can generate upon free registration via [this link](https://bonobo.capi.gutools.co.uk/register/developer).  Unless you do not want to change its name in the `docker-compose.yml` file, this variable must be called `GUARDIAN_API_KEY`.
 
 #### STEP 3: Running the webapp with Docker
 
-- Go to the folder `marxist_press_review`:
+- Go into the folder `marxist_press_review`:
   - run `docker-compose build` and wait for Docker to set up everything for you;
   - run `docker-compose up` and wait for the log to confirm that the webapp has correctly started (something like `press_review_app_1   | 2021-08-16 15:38:21,336: INFO:  * Running on http://<ANY-ADDRESS-ENDING-BY-:5000/>`);
   - wait for another while, as the software downloads the most recent articles from _The Guardian_'s API to PostgreSQL (the log will confirm that your API key works correctly by printing lines such as: `2021-08-16 15:40:12,819: INFO: Successfully connected to https://content.guardianapis.com/search?section=world: scraping...`);
