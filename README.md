@@ -60,7 +60,7 @@ Have fun talking with Karl Marx!
 * Vaswani, A. *et al.* (2017), “Attention is All You Need”, 31st Conference on Neural Information Processing Systems (*NIPS* 2017), Long Beach (CA), URL: https://arxiv.org/abs/1706.03762.
 
 ---
-### To Do:
+### To Do
 - [ ] Increase the size of the training dataset
 - [ ] Add more documentation
 - [ ] Host on GCP
