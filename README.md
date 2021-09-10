@@ -43,7 +43,7 @@ In order for this webapp to work, you will need to set _two environment variable
 
 #### STEP 3: Running the webapp with Docker
 
-- Go into the folder `marxist_press_review`:
+- Install Docker, then go into the folder `marxist_press_review`:
   - run `docker-compose build` and wait for Docker to set up everything for you;
   - run `docker-compose up` and wait for the log to confirm that the webapp has correctly started (something like `press_review_app_1   | 2021-08-16 15:38:21,336: INFO:  * Running on http://<ANY-ADDRESS-ENDING-BY-:5000/>`);
   - wait for another while, as the software downloads the most recent articles from _The Guardian_'s API to PostgreSQL (the log will confirm that your API key works correctly by printing lines such as: `2021-08-16 15:40:12,819: INFO: Successfully connected to https://content.guardianapis.com/search?section=world: scraping...`);
