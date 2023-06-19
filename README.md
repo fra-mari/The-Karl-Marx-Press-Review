@@ -14,7 +14,7 @@ For this project, I decided to **fine-tune the GPT-2**, that is to make it espec
 |:--:|
 ---
 ### Architecture
-The model is fine-tuned by means of [aitextgen]([https://docs.aitextgen.io/](https://aitextgen.minimaxir.com/)), a Python library developed by [Max Woolf](https://github.com/minimaxir). Aitextgen leverages PyTorch to retrain the 124 M version of GPT-2 using the dataset provided by the user. 
+The model is fine-tuned by means of [aitextgen](https://aitextgen.minimaxir.com/), a Python library developed by [Max Woolf](https://github.com/minimaxir). Aitextgen leverages PyTorch to retrain the 124 M version of GPT-2 using the dataset provided by the user. 
 
 The webapp cyclically collects articles from _The Guardian_’s API and uses the language model to generate “Marxist comments” based on them. I also implemented some basic **sentiment analysis** on the generated comments using [VADER](https://github.com/cjhutto/vaderSentiment) (_Valence Aware Dictionary and sEntiment Reasoner_). All these data are eventually stored in the SQL database.
 
